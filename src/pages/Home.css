@@ -1,0 +1,76 @@
+.header{
+    display: flex;
+    padding-top:50px;
+    padding-left:100px;
+    padding-right: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    padding:100px;
+    grid-row-gap: 20px;
+}
+
+.links{
+    display: flex;
+    gap:60px;
+    font-weight: 500;
+    font-family: DM Sans;
+}
+.links > div{
+    cursor: pointer;
+}
+
+.project{
+    min-height:300px;
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.image{
+    width: 80%;
+    height: 100%;
+    position: relative;
+    filter: contrast(0.9);
+    transition: opacity 0.3s;
+}
+
+.image:hover{
+    opacity:100%
+}
+
+.logo{
+    cursor:default;
+}
+
+.arrow{
+    height:30px;
+    transform: translate(0,-50%) scale(1.0);
+    opacity: 60%;
+    transition: opacity 0.3s ease-in-out, transform 0.3s;
+    cursor: pointer;
+    padding:4px
+}
+
+.arrow:hover{
+    opacity: 80%;
+    transform: translate(0,-50%) scale(1.1);
+
+}
+
+.arrow2{
+    height:30px;
+    transform: translate(0,-50%) scale(1.0) rotate(180deg);
+    opacity: 60%;
+    transition: opacity 0.3s ease-in-out, transform 0.3s;
+    cursor: pointer;
+    padding:4px
+}
+
+.arrow2:hover{
+    opacity: 80%;
+    transform: translate(0,-50%) scale(1.1) rotate(180deg);
+}
