@@ -1,10 +1,45 @@
 .header{
     display: flex;
+    position: relative;
     padding-top:50px;
     padding-left:100px;
     padding-right: 100px;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.headerpopup{
+    display: flex;
+    position: fixed;
+    width:100%;
+    justify-content: space-between;
+    background-color: #F3F3F3;
+    z-index: 2000;
+    border: 1px solid rgb(0,0,0,0.2);
+    opacity: 90%;
+}
+
+.logo.popup{
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.links.popup{
+    padding-right: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mobileheader{
+    display: flex;
+    padding-top:10px;
+    padding-left:40px;
+    padding-right: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    display: none;
+    align-items: center;
 }
 
 .container{
@@ -16,12 +51,17 @@
 
 .links{
     display: flex;
-    gap:60px;
+    gap:70px;
     font-weight: 500;
-    font-family: DM Sans;
+    padding-right: 120px;
 }
 .links > div{
     cursor: pointer;
+    transition: color 0.3s;
+}
+
+.links > div:hover{
+    color:rgb(175, 157, 56);
 }
 
 .project{
@@ -31,10 +71,12 @@
 }
 
 .image{
-    width: 80%;
+    width: 90%;
     height: 100%;
     position: relative;
-    filter: contrast(0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: opacity 0.3s;
 }
 
@@ -46,17 +88,22 @@
     cursor:default;
 }
 
+.logo.mobile{
+    padding:10px;
+    padding-left: 40px;
+}
+
 .arrow{
     height:30px;
     transform: translate(0,-50%) scale(1.0);
-    opacity: 60%;
+    opacity: 90%;
     transition: opacity 0.3s ease-in-out, transform 0.3s;
     cursor: pointer;
     padding:4px
 }
 
 .arrow:hover{
-    opacity: 80%;
+    opacity: 100%;
     transform: translate(0,-50%) scale(1.1);
 
 }
@@ -64,13 +111,144 @@
 .arrow2{
     height:30px;
     transform: translate(0,-50%) scale(1.0) rotate(180deg);
-    opacity: 60%;
+    opacity: 90%;
     transition: opacity 0.3s ease-in-out, transform 0.3s;
     cursor: pointer;
     padding:4px
 }
 
 .arrow2:hover{
-    opacity: 80%;
+    opacity: 100%;
     transform: translate(0,-50%) scale(1.1) rotate(180deg);
+}
+
+.rightside{
+    width:80%;
+    padding-left:20px;
+    display:flex;
+    justify-content:center;
+}
+
+.projectimg{
+    width:80%;
+    height:40vh;
+    border-radius:4px;
+    object-fit:cover;
+    border:1px solid rgb(0,0,0,0.1);
+}
+
+.profileimg{
+    width:70%;
+    height:60vh;
+    object-position: center 0;
+    border-radius:4px;
+    object-fit:cover;
+    border:1px solid rgb(0,0,0,0.1);
+}
+
+
+.hero{
+    width:50%; 
+    font-size:28px;
+}
+.infosection{
+    width: 70%;
+}
+
+.sectiontitle{
+    padding-top:40px;
+    font-size:20px;
+    padding-bottom:10px;
+}
+
+.burgericon{
+    width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: black;
+  z-index: 1004;
+}
+
+.arrowcontainer{
+    position:absolute;
+    display: flex;
+    width:80%;
+    justify-content: space-between;
+    align-items:center;
+    top:50%;
+}
+
+.slidename{
+    transform: translate(2px, -20vh);
+    padding:10px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:858px) {
+    .project{
+        flex-direction: column;
+    }
+    .infosection{
+        order: 2;
+    }
+    .rightside{
+        width:100%;
+        padding: 0px;
+        order: 1;
+    }
+    .image{
+        width:100%;
+        padding-bottom: 30px;
+    }
+    .hero{
+        width:100%;
+    }
+    .infosection{
+        width:100%;
+    }
+    .projectimg{
+        width:100%;
+        height: 40vh;
+    }
+    .container{
+        padding:40px;
+    }
+    .hero{
+        font-size: 18px;
+        padding-top: 30px;
+    }
+    .sectiontitle{
+        padding: 0px;
+        font-size: 14px;
+    }
+    .links{
+        flex-direction: column-reverse;
+        padding-right: 0px;
+    }
+    .header{
+        display: none;
+    }
+    .mobileheader{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        padding: 0px;
+        top:0;
+        background-color: #F3F3F3;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+    }
+    .arrowcontainer{
+        width: 100%;
+        transform: translate(0,-50%);
+    }
+    .profileimg{
+        width: 100%;
+        height: 40vh;
+    }
 }
