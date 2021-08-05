@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.14cddb7c.chunk.css",
+    "main.js": "/static/js/main.cb0ff105.chunk.js",
+    "main.js.map": "/static/js/main.cb0ff105.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5ebc510a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5ebc510a.js.map",
+    "static/js/2.60e9e62a.chunk.js": "/static/js/2.60e9e62a.chunk.js",
+    "static/js/2.60e9e62a.chunk.js.map": "/static/js/2.60e9e62a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.14cddb7c.chunk.css.map": "/static/css/main.14cddb7c.chunk.css.map",
+    "static/js/2.60e9e62a.chunk.js.LICENSE.txt": "/static/js/2.60e9e62a.chunk.js.LICENSE.txt",
+    "static/media/obdate.04faef66.png": "/static/media/obdate.04faef66.png",
+    "static/media/profilepic.9c35650f.jpg": "/static/media/profilepic.9c35650f.jpg",
+    "static/media/puzzlemultiplayer.b2129835.gif": "/static/media/puzzlemultiplayer.b2129835.gif",
+    "static/media/puzzleplay.767ce54f.gif": "/static/media/puzzleplay.767ce54f.gif",
+    "static/media/puzzlesolver.0f8e65e2.gif": "/static/media/puzzlesolver.0f8e65e2.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5ebc510a.js",
+    "static/js/2.60e9e62a.chunk.js",
+    "static/css/main.14cddb7c.chunk.css",
+    "static/js/main.cb0ff105.chunk.js"
+  ]
+}

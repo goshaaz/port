@@ -20,13 +20,10 @@ export const Home = () => {
     const puzzleImages = [puzzleplay, puzzlesolver, puzzlemultiplayer]
     const [currentImagePuzzle, setCurrentImagePuzzle] = useState(0)
     const [menuVisible, setMenuVisible] = useState(false)
-    const [fixedVisible, setFixedVisible] = useState(false)
 
     const projectsRef = useRef(null)
     const aboutRef = useRef(null)
     const contactRef = useRef(null)
-
-    const location = useLocation()
 
     const navigateTo = (ref, mob = false) => {
 
@@ -55,22 +52,6 @@ export const Home = () => {
         }
     }
 
-    function scrollListener(event){
-        if(window.pageYOffset === 450){
-            console.log('projects ')
-        }
-        if(window.pageYOffset > 200){
-            setFixedVisible(true)
-        }else{
-            setFixedVisible(false)
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', scrollListener)
-    },[])
-
-
     return (
         <div>
             <div className="header">
@@ -79,17 +60,17 @@ export const Home = () => {
                 </div>
                 <div className="links">
                     <div>
-                        <Link onClick={() => navigateTo(projectsRef)} to="/projects" style={{textDecoration:"none", color:"inherit"}}>
+                        <Link onClick={() => navigateTo(projectsRef)} to="/#projects" style={{textDecoration:"none", color:"inherit"}}>
                             Projects
                         </Link>
                     </div>
                     <div>
-                        <Link onClick={() => navigateTo(aboutRef)} to="/about" style={{textDecoration:"none", color:"inherit"}}>
+                        <Link onClick={() => navigateTo(aboutRef)} to="/#about" style={{textDecoration:"none", color:"inherit"}}>
                             About 
                         </Link>
                     </div>
                     <div>
-                    <Link onClick={() => navigateTo(contactRef)} to="/about" style={{textDecoration:"none", color:"inherit"}}>
+                    <Link onClick={() => navigateTo(contactRef)} to="/#about" style={{textDecoration:"none", color:"inherit"}}>
                             Contact
                         </Link>
                     </div>
@@ -122,8 +103,10 @@ export const Home = () => {
             Hi, my name is
             Georgij Li.
             </h1>
-            I'm a solution oriented Fullstack Developer with a passion for building
-            applications that help solve real life problems.
+            <div className="bio">
+                I'm a solution oriented Fullstack Developer with a passion for building
+                applications that help solve real life problems.
+            </div>
             </div>
             <div ref={projectsRef} className="sectiontitle">
                 <h1>
@@ -132,12 +115,13 @@ export const Home = () => {
             </div>
             <div className="project">
                 <div className="infosection" >
-                    <div style={{fontWeight:"500", fontSize:"20px"}}>
+                    <div style={{fontWeight:"600", fontSize:"20px"}}>
                     01 / Dating web app</div><br/>
                     <div style={{fontSize:"18px"}}>
                     A tinder like dating web app for gamers and streamers. 
                     Register and upload up to 4 images and then start swiping to find potential
-                    matches within your chosen search distance. If you match
+                    matches within your chosen search distance. You can add what games you stream or play among a selection
+                    of currently popular games. If you match
                     with someone you can message him or her. User information, matches and 
                     messages are stored in a MongoDB database and images are stored on Firebase storage.
 
@@ -183,7 +167,7 @@ export const Home = () => {
             </div>
             <div className="project">
                 <div className="infosection">
-                    <div style={{fontWeight:"500", fontSize:"20px"}}>
+                    <div style={{fontWeight:"600", fontSize:"20px"}}>
                     02 / 8 Puzzle Game</div><br/>
                     <div style={{fontSize:"18px"}}>
                     A 8 puzzle game where the user gets a randomized puzzle and can solve it by
@@ -211,7 +195,7 @@ export const Home = () => {
                 <div className="image"> 
                     <div style={{position:"absolute", display:"flex", width:"70%", gap:"10px", justifyContent:"center", transform:"translate(0, calc( 20vh - 6px))"}}>
                         {puzzleImages.map((item, index) => {
-                            return  <div style={{width:"6%", backgroundColor:index === currentImagePuzzle ? "rgb(0,0,0,0.7)" : "rgb(0,0,0,0.15)" , height:"5px", borderRadius:"6px", marginBottom:"4px"}}/>
+                            return  <div className="imageindicator" style={{backgroundColor:index === currentImagePuzzle ? "rgb(0,0,0,0.7)" : "rgb(0,0,0,0.15)"}}/>
                         })}
                     </div>
                     <div style={{position:"absolute", display:"flex", width:"80%", gap:"10px",color:"rgb(0,0,0,1)", fontWeight:"500", fontSize:"18px", transform:"translate(0px,calc( 15px - 20vh )", left:"4px", justifySelf:"center"}}>
@@ -232,7 +216,7 @@ export const Home = () => {
                         </div>
                         {
                             puzzleImages.map((obj, index) => {
-                                return <div className="slidename" style={{display:currentImagePuzzle === index ? 'inherit' : 'none',position:"absolute"}}>{index+1}. {index === 0 ? <>Playing puzzle</> : index === 1 ? <>A* search solver </> : <>Playing online</>} </div>
+                                return <div className="slidename" style={{display:currentImagePuzzle === index ? 'inherit' : 'none',position:"absolute", opacity:"0.9"}}>{index+1}. {index === 0 ? <>Playing puzzle</> : index === 1 ? <>A* search solver </> : <>Playing online</>} </div>
                             })
                         }
 
@@ -261,7 +245,7 @@ export const Home = () => {
 <br/>
 <div style={{fontSize:"18px"}}>
  My main focus when developing applications is providing a smooth, functional and visually pleasing experience 
- for the user, while also considering any potential potential pitfalls for non-ideal use cases.
+ for the user.
 </div>
 <br></br>
 <div style={{fontSize:"18px"}}>
@@ -291,7 +275,7 @@ Here are a few technologies I've been working with recently:
                     </div>
                 </div>
                 <div className="rightside about">
-                    <div className="image"> 
+                    <div className="image about"> 
                         <img className="profileimg" src={profilepic}></img>
                     </div>
                 </div>
