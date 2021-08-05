@@ -1,24 +1,26 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useRef} from 'react'
 import './Home.css'
 import githublogo from '../assets/images/githublogo.png'
 import linkedinlogo from '../assets/images/linkedinlogo.png'
-import obdate from '../assets/images/obdate.png'
 import leftarrow from '../assets/images/leftarrow.png'
 import puzzlemultiplayer from '../assets/images/puzzlemultiplayer.gif'
 import puzzleplay from '../assets/images/puzzleplay.gif'
 import puzzlesolver from '../assets/images/puzzlesolver.gif'
+import obdateregister from '../assets/images/obdateregister.gif'
+import obdatemessage from '../assets/images/obdatemessage.gif'
 import profilepic from '../assets/images/profilepic.jpg'
 import {
-    Link, useLocation
+    Link
   } from "react-router-dom";
 
 export const Home = () => {
 
-    const obdateImages = [obdate, "https://cdn.datingxp.co/wp-content/uploads/2019/09/tinder-bio-examples-1024x715.png", "https://www.vidaselect.com/wp-content/uploads/2019/02/negative-response-start.jpg"]
+    const dateImages = [obdateregister, obdatemessage]
     const [currentImageDate, setCurrentImageDate] = useState(0)
 
     const puzzleImages = [puzzleplay, puzzlesolver, puzzlemultiplayer]
     const [currentImagePuzzle, setCurrentImagePuzzle] = useState(0)
+
     const [menuVisible, setMenuVisible] = useState(false)
 
     const projectsRef = useRef(null)
@@ -140,26 +142,30 @@ export const Home = () => {
                     </div>
                     </div>
                 </div>
-                <div className="rightside">
-                    <div className="image"> 
-                        <div style={{position:"absolute", bottom:"4px", display:"flex", width:"100%", gap:"10px", justifyContent:"center"}}>
-                            {obdateImages.map((item, index) => {
-                                return  <div style={{width:"6%", backgroundColor:index === currentImageDate ? "rgb(0,0,0,0.7)" : "rgb(0,0,0,0.15)" , height:"5px", borderRadius:"6px", marginBottom:"4px"}}/>
-
-                            })}
-                        </div>
-                        <img className="projectimg" src={obdateImages[currentImageDate]}></img>
-                        <div style={{position:"absolute", display:"flex", width:"80%", justifyContent:"space-between",alignItems:"center", top:"50%"}}>
+                <div className="rightside" >
+                <div className="image"> 
+                    <div style={{position:"absolute", display:"flex", width:"70%", gap:"10px", justifyContent:"center", transform:"translate(0, calc( 20vh - 6px))"}}>
+                        {dateImages.map((item, index) => {
+                            return  <div className="imageindicator" style={{backgroundColor:index === currentImageDate ? "rgb(0,0,0,0.7)" : "rgb(0,0,0,0.15)"}}/>
+                        })}
+                    </div>
+                        <img alt="projectimg" className="projectimg" style={{objectFit:"contain"}} src={dateImages[currentImageDate]}></img>
+                        <div className="arrowcontainer">
                         <div>
-                            {currentImagePuzzle > 0 ? 
-                                 <img onClick={() => {setCurrentImagePuzzle(currentImagePuzzle-1)}} className="arrow" src={leftarrow}></img>
+                            {currentImageDate > 0 ? 
+                                 <img alt="arrow" onClick={() => {setCurrentImageDate(currentImageDate-1)}} className="arrow" src={leftarrow}></img>
                                 : null}
                         </div>
                         <div>
-                            {currentImagePuzzle < puzzleImages.length-1 ? 
-                                 <img onClick={() => {setCurrentImagePuzzle(currentImagePuzzle+1)}} className="arrow2" src={leftarrow}></img>
+                            {currentImageDate < dateImages.length-1 ? 
+                                 <img alt="arrow" onClick={() => {setCurrentImageDate(currentImageDate+1)}} className="arrow2" src={leftarrow}></img>
                                 : null}
                         </div>
+                        {
+                            dateImages.map((obj, index) => {
+                                return <div className="slidename" style={{display:currentImageDate === index ? 'inherit' : 'none',position:"absolute", opacity:"0.9"}}>{index+1}. {index === 0 ? <>Registration</> : <>Match simulation </>} </div>
+                            })
+                        }
 
                     </div>
                     </div>
@@ -184,7 +190,9 @@ export const Home = () => {
                     Used technologies:</span> <span style={{fontWeight:"600"}}>React, Node.js, Express.js and Socket.io</span> </div><br/>
                     <div style={{display: "flex", gap:"20px", paddingTop:"20px"}}>
                     <div style={{fontWeight:"600", fontSize:"16px", cursor:"pointer"}}>
+                    <a style={{textDecoration:"none", color:"inherit"}} href="https://github.com/goshaaz/8-puzzle-game">
                        Code
+                       </a>
                     </div>
                     <div style={{fontWeight:"600", fontSize:"16px", cursor:"pointer"}}>
                         Demo
@@ -198,20 +206,16 @@ export const Home = () => {
                             return  <div className="imageindicator" style={{backgroundColor:index === currentImagePuzzle ? "rgb(0,0,0,0.7)" : "rgb(0,0,0,0.15)"}}/>
                         })}
                     </div>
-                    <div style={{position:"absolute", display:"flex", width:"80%", gap:"10px",color:"rgb(0,0,0,1)", fontWeight:"500", fontSize:"18px", transform:"translate(0px,calc( 15px - 20vh )", left:"4px", justifySelf:"center"}}>
-                        {puzzleImages.map((item, index) => {
-                        })}
-                    </div>
-                        <img className="projectimg" style={{objectFit: currentImagePuzzle === 2 ? "contain" : "cover"}} src={puzzleImages[currentImagePuzzle]}></img>
+                        <img alt="projectimg" className="projectimg" style={{objectFit: currentImagePuzzle === 2 ? "contain" : "cover"}} src={puzzleImages[currentImagePuzzle]}></img>
                         <div className="arrowcontainer">
                         <div>
                             {currentImagePuzzle > 0 ? 
-                                 <img onClick={() => {setCurrentImagePuzzle(currentImagePuzzle-1)}} className="arrow" src={leftarrow}></img>
+                                 <img alt="arrow" onClick={() => {setCurrentImagePuzzle(currentImagePuzzle-1)}} className="arrow" src={leftarrow}></img>
                                 : null}
                         </div>
                         <div>
                             {currentImagePuzzle < puzzleImages.length-1 ? 
-                                 <img onClick={() => {setCurrentImagePuzzle(currentImagePuzzle+1)}} className="arrow2" src={leftarrow}></img>
+                                 <img alt="projectimg" onClick={() => {setCurrentImagePuzzle(currentImagePuzzle+1)}} className="arrow2" src={leftarrow}></img>
                                 : null}
                         </div>
                         {
@@ -276,7 +280,7 @@ Here are a few technologies I've been working with recently:
                 </div>
                 <div className="rightside about">
                     <div className="image about"> 
-                        <img className="profileimg" src={profilepic}></img>
+                        <img alt="projectimg" className="profileimg" src={profilepic}></img>
                     </div>
                 </div>
             </div>
@@ -297,12 +301,12 @@ Email: ligeorgij7@hotmail.com
 <div style={{display:"flex", gap:"10px", paddingTop:"30px"}}>
 <div style={{width:"22px", height:"auto"}}>
 <a style={{textDecoration:"none", color:"inherit"}} href="https://github.com/goshaaz">
-        <img src={githublogo} style={{maxWidth:"100%", maxHeight:"100%", cursor:"pointer"}}></img>
+        <img alt="projectimg" src={githublogo} style={{maxWidth:"100%", maxHeight:"100%", cursor:"pointer"}}></img>
     </a>
 </div>
 <div style={{width:"22px", height:"auto"}}>
     <a style={{textDecoration:"none", color:"inherit"}} href="https://www.linkedin.com/in/georgij-li-25b7a8159/">
-        <img src={linkedinlogo} style={{maxWidth:"100%", maxHeight:"100%", cursor:"pointer"}}></img>
+        <img alt="projectimg" src={linkedinlogo} style={{maxWidth:"100%", maxHeight:"100%", cursor:"pointer"}}></img>
     </a>
 </div>
 </div>

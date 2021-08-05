@@ -67,7 +67,7 @@
 .project{
     min-height:300px;
     display: flex;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
 }
 
 .image{
@@ -200,12 +200,13 @@
 }
 
 .slidename{
-    transform: translate(2px, -20vh);
-    padding:10px;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    background-color: rgba(0, 0, 0, 0);
+    transform: translate(0px, 14.5vh);
+    padding:6px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.678);
     border-radius: 0px;
+    margin: 10px;
 }
 
 .footer{
@@ -239,6 +240,7 @@
 @media screen and (max-width:858px) {
     .project{
         flex-direction: column;
+        padding-bottom: 60px;
     }
     .imageindicator{
         width:20%;
@@ -326,5 +328,10 @@
     }
     .rightside.about{
         width: 100%;
+    }
+    .slidename{
+        transform: translate(0px, -19vh);
+        font-size: 14px;
+        padding:4px;
     }
 }
