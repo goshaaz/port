@@ -60,9 +60,6 @@
     transition: color 0.3s;
 }
 
-.links > div:hover{
-    color:rgb(175, 157, 56);
-}
 
 .project{
     min-height:300px;
