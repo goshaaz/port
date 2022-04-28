@@ -62,17 +62,17 @@ export const Home = () => {
                 </div>
                 <div className="links">
                     <div>
-                        <Link onClick={() => navigateTo(projectsRef)} to="/#projects" style={{textDecoration:"none", color:"inherit"}}>
+                        <Link onClick={() => navigateTo(projectsRef)} style={{textDecoration:"none", color:"inherit"}}>
                             Projects
                         </Link>
                     </div>
                     <div>
-                        <Link onClick={() => navigateTo(aboutRef)} to="/#about" style={{textDecoration:"none", color:"inherit"}}>
+                        <Link onClick={() => navigateTo(aboutRef)} style={{textDecoration:"none", color:"inherit"}}>
                             About 
                         </Link>
                     </div>
                     <div>
-                    <Link onClick={() => navigateTo(contactRef)} to="/#about" style={{textDecoration:"none", color:"inherit"}}>
+                    <Link onClick={() => navigateTo(contactRef)} style={{textDecoration:"none", color:"inherit"}}>
                             Contact
                         </Link>
                     </div>
