@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/port/static/css/main.dad912a0.chunk.css",
-    "main.js": "/port/static/js/main.8479629c.chunk.js",
-    "main.js.map": "/port/static/js/main.8479629c.chunk.js.map",
+    "main.css": "/port/static/css/main.8d60d828.chunk.css",
+    "main.js": "/port/static/js/main.12377b5c.chunk.js",
+    "main.js.map": "/port/static/js/main.12377b5c.chunk.js.map",
     "runtime-main.js": "/port/static/js/runtime-main.ca19e8e8.js",
     "runtime-main.js.map": "/port/static/js/runtime-main.ca19e8e8.js.map",
     "static/js/2.60e9e62a.chunk.js": "/port/static/js/2.60e9e62a.chunk.js",
     "static/js/2.60e9e62a.chunk.js.map": "/port/static/js/2.60e9e62a.chunk.js.map",
     "index.html": "/port/index.html",
-    "static/css/main.dad912a0.chunk.css.map": "/port/static/css/main.dad912a0.chunk.css.map",
+    "static/css/main.8d60d828.chunk.css.map": "/port/static/css/main.8d60d828.chunk.css.map",
     "static/js/2.60e9e62a.chunk.js.LICENSE.txt": "/port/static/js/2.60e9e62a.chunk.js.LICENSE.txt",
     "static/media/obdatemessage.94d07b97.gif": "/port/static/media/obdatemessage.94d07b97.gif",
     "static/media/obdateregister.66961b08.gif": "/port/static/media/obdateregister.66961b08.gif",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.ca19e8e8.js",
     "static/js/2.60e9e62a.chunk.js",
-    "static/css/main.dad912a0.chunk.css",
-    "static/js/main.8479629c.chunk.js"
+    "static/css/main.8d60d828.chunk.css",
+    "static/js/main.12377b5c.chunk.js"
   ]
 }
