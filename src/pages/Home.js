@@ -62,17 +62,17 @@ export const Home = () => {
                 </div>
                 <div className="links">
                     <div>
-                        <Link onClick={() => navigateTo(projectsRef)} style={{textDecoration:"none", color:"inherit"}}>
+                        <Link onClick={() => navigateTo(projectsRef)} style={{textDecoration:"none"}} className="link">
                             Projects
                         </Link>
                     </div>
                     <div>
-                        <Link onClick={() => navigateTo(aboutRef)} style={{textDecoration:"none", color:"inherit"}}>
+                        <Link onClick={() => navigateTo(aboutRef)} style={{textDecoration:"none"}} className="link">
                             About 
                         </Link>
                     </div>
                     <div>
-                    <Link onClick={() => navigateTo(contactRef)} style={{textDecoration:"none", color:"inherit"}}>
+                    <Link onClick={() => navigateTo(contactRef)} style={{textDecoration:"none"}} className="link">
                             Contact
                         </Link>
                     </div>
@@ -89,25 +89,25 @@ export const Home = () => {
                 <div className="burgericon"></div>
                 </div>
                 <div style={{zIndex:"2000", position:"fixed", right:"0px", display:"flex", flexDirection:"column", gap:"40px", backgroundColor:"#F3F3F3", height:"100%", top:"50px", padding:"30px", paddingLeft:"100px", paddingRight:"100px", transform: menuVisible ? "translate(0%,0)" : "translate(100%,0)", borderLeft:"1px solid rgb(0,0,0,0.2)", transition:"transform 0.3s"}} className="mobilemenu">
-                    <div onClick={() => {navigateTo(projectsRef, true); setMenuVisible(false) }}>
+                    <div onClick={() => {navigateTo(projectsRef, true); setMenuVisible(false) }} className="link">
                         Projects
                     </div>
-                    <div onClick={() => {navigateTo(aboutRef, true); setMenuVisible(false) }}>
+                    <div onClick={() => {navigateTo(aboutRef, true); setMenuVisible(false) }} className="link">
                         About
                     </div>
-                    <div onClick={() => {navigateTo(contactRef, true); setMenuVisible(false);}}>
+                    <div onClick={() => {navigateTo(contactRef, true); setMenuVisible(false);}} className="link">
                         Contact
                     </div>
             </div>
             </div>
-        <div className="container">
+        <div className="container" onClick={() => {menuVisible && setMenuVisible(menuVisible => !menuVisible)}}>
             <div className="hero" ><h1>
             Hi, my name is
             Georgij Li.
             </h1>
             <div className="bio">
                 I'm a solution oriented Fullstack Developer with a passion for building
-                applications that help solve real life problems.
+                applications that help solve real life problems. I also enjoy web design and building products that provide a good user experience.
             </div>
             </div>
             <div ref={projectsRef} className="sectiontitle">
@@ -135,10 +135,13 @@ export const Home = () => {
                     
                     <div style={{display: "flex", gap:"20px", paddingTop:"20px"}}>
                     <div style={{fontWeight:"600", fontSize:"16px", cursor:"pointer"}}>
-                       Code
+                       Code 
                     </div>
                     <div style={{fontWeight:"600", fontSize:"16px", cursor:"pointer"}}>
                         Demo
+                    </div>
+                    <div style={{fontWeight:"600", fontSize:"16px"}}>
+                        (Coming soon)
                     </div>
                     </div>
                 </div>
@@ -195,7 +198,9 @@ export const Home = () => {
                        </a>
                     </div>
                     <div style={{fontWeight:"600", fontSize:"16px", cursor:"pointer"}}>
-                        Demo
+                    <a style={{textDecoration:"none", color:"inherit"}} href="https://eight-star-puzzle.herokuapp.com/">
+                       Demo
+                       </a>
                     </div>
                     </div>
                 </div>
@@ -314,7 +319,7 @@ Email: ligeorgij7@hotmail.com
                 </div>
             </div>
         </div>
-        <div className="footer" >
+        <div className="footer" onClick={() => {menuVisible && setMenuVisible(menuVisible => !menuVisible)}} >
             <div className="footerleft">
                 Developed by Georgij Li
             </div>

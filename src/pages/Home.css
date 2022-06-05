@@ -56,10 +56,17 @@
     padding-right: 120px;
 }
 .links > div{
-    cursor: pointer;
     transition: color 0.3s;
 }
 
+.link{
+    color:black;
+    font-size: 1.1rem;
+}
+
+.link:hover{
+    color:rgb(156, 142, 59);
+}
 
 .project{
     min-height:300px;
@@ -330,5 +337,15 @@
         transform: translate(0px, -19vh);
         font-size: 14px;
         padding:4px;
+    }
+    .link{
+        cursor: pointer;
+        color:black;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .link:hover{
+        color:rgb(156, 142, 59);
     }
 }
