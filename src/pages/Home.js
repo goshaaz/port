@@ -12,6 +12,7 @@ import profilepic from '../assets/images/profilepic.jpg'
 import {
     Link
   } from "react-router-dom";
+import Jobs from '../components/Jobs'
 
 export const Home = () => {
 
@@ -61,21 +62,18 @@ export const Home = () => {
                     GL
                 </div>
                 <div className="links">
-                    <div>
-                        <Link onClick={() => navigateTo(projectsRef)} style={{textDecoration:"none"}} className="link">
-                            Projects
-                        </Link>
-                    </div>
-                    <div>
-                        <Link onClick={() => navigateTo(aboutRef)} style={{textDecoration:"none"}} className="link">
-                            About 
-                        </Link>
-                    </div>
-                    <div>
-                    <Link onClick={() => navigateTo(contactRef)} style={{textDecoration:"none"}} className="link">
+                        <div onClick={() => navigateTo(projectsRef)} style={{textDecoration:"none", cursor:"pointer"}} className="link">
+                            About
+                        </div>
+                        <div onClick={() => navigateTo(projectsRef)} style={{textDecoration:"none",cursor:"pointer"}} className="link">
+                            Experiences
+                        </div>
+                        <div onClick={() => navigateTo(aboutRef)} style={{textDecoration:"none",cursor:"pointer"}} className="link">
+                            Projects 
+                        </div>
+                        <div onClick={() => navigateTo(contactRef)} style={{textDecoration:"none",cursor:"pointer"}} className="link">
                             Contact
-                        </Link>
-                    </div>
+                        </div>
                 </div>
             </div>
             {menuVisible}
@@ -103,12 +101,80 @@ export const Home = () => {
         <div className="container" onClick={() => {menuVisible && setMenuVisible(menuVisible => !menuVisible)}}>
             <div className="hero" ><h1>
             Hi, my name is
-            Georgij Li.
+            Georgij.
             </h1>
             <div className="bio">
-                I'm a solution oriented Fullstack Developer with a passion for building
-                applications that help solve real life problems. I also enjoy web design and building products that provide a good user experience.
+                I'm a Fullstack Developer with a passion for developing
+                applications that help solve real life problems. I also enjoy web design and building applications that look good and provide a good user experience.
             </div>
+            </div>
+            
+            <div ref={aboutRef} className="sectiontitle">
+                <h1 >
+                    About me
+                </h1>
+            </div>
+            <div className="project">
+                <div className="infosection about" >
+                    <div style={{fontSize:"18px"}}>
+                    I'm currently finishing my 
+                    last year as a student at Linköping university pursuing a Master's of Science degree in Computer Science. I have great interest in fullstack development, web design and tech in general. I love learning so I am always on the hunt to find new things to learn to expand my technical knowledge!
+</div>
+<br/>
+<div style={{fontSize:"18px"}}>
+ My main focus when developing applications is providing a smooth, functional and visually pleasing experience 
+ for the user, while also making sure that the application is secure and performant.
+</div>
+<br></br>
+<div style={{fontSize:"18px"}}>
+Here are a few technologies I've been working with recently:
+</div>
+<br/>
+<div style={{fontSize:"17px", display:"grid", gridTemplateColumns:"1fr 1fr", fontWeight:"600"}}>
+        <div>
+        ▹ JavaScript
+    </div>
+    <div>
+    ▹ HTML & CSS
+    </div>
+    <div>
+    ▹ React
+    </div>
+    <div>
+    ▹ PostgreSQL
+    </div>
+    <div>
+    ▹ Node.js
+    </div>
+    <div>
+    ▹ MongoDB
+    </div>
+
+                    </div>
+                    
+<br></br>
+<div style={{fontSize:"18px"}}>
+Outside of work I enjoy playing video games, hanging out with friends and exercising.
+</div>
+                </div>
+                <div className="rightside about">
+                    <div className="image about"> 
+                        <img alt="projectimg" className="profileimg" src={profilepic}></img>
+                    </div>
+                </div>
+            </div>
+            <div ref={aboutRef} className="sectiontitle">
+                <h1 >
+                    Experiences
+                </h1>
+            </div>
+            <div className="project">
+                <div className="infosection about" >
+                    <div style={{fontSize:"18px"}}>
+                        <Jobs/>
+                   </div> 
+<br/>
+                </div>
             </div>
             <div ref={projectsRef} className="sectiontitle">
                 <h1>
@@ -190,7 +256,7 @@ export const Home = () => {
 
                     <div style={{fontWeight:"400", paddingTop:"30px", fontSize:"18px"}}>
                         <span>
-                    Used technologies:</span> <span style={{fontWeight:"600"}}>React, Node.js, Express.js and Socket.io</span> </div><br/>
+                    Used technologies:</span> <span style={{fontWeight:"600"}}>React, Node.js, MongoDB, Express.js and Socket.io</span> </div><br/>
                     <div style={{display: "flex", gap:"20px", paddingTop:"20px"}}>
                     <div style={{fontWeight:"600", fontSize:"16px", cursor:"pointer"}}>
                     <a style={{textDecoration:"none", color:"inherit"}} href="https://github.com/goshaaz/8-puzzle-game">
@@ -230,62 +296,6 @@ export const Home = () => {
                         }
 
                     </div>
-                    </div>
-                </div>
-            </div>
-            <div ref={aboutRef} className="sectiontitle">
-                <h1 >
-                    About me
-                </h1>
-            </div>
-            <div className="project">
-                <div className="infosection about" >
-                    <div style={{fontSize:"18px"}}>
-                    Hello! My name is Georgij and I enjoy developing stuff for the web. I'm currently finishing my 
-                    fifth and last year at Linköping university as a Media technology and Engineering student.
-                     I have always seen myself as a middle ground between a logical and creative person as I enjoy both 
-                     math/sciences and media/design depending on the circumstances. That is also perhaps partly one of the reasons why I chose Media technology
-                     as my major, since in our programme we get to both code, which I see as mostly a logical task, 
-                    and study UI/UX, which is perhaps more of a creative task. I think 
-                    this is also one of the reasons why I enjoy developing web applications as it gives me the 
-                    possiblity to
-                    design and build a product from scratch!
-</div>
-<br/>
-<div style={{fontSize:"18px"}}>
- My main focus when developing applications is providing a smooth, functional and visually pleasing experience 
- for the user.
-</div>
-<br></br>
-<div style={{fontSize:"18px"}}>
-Here are a few technologies I've been working with recently:
-</div>
-<br/>
-<div style={{fontSize:"18px", display:"grid", gridTemplateColumns:"1fr 1fr", fontWeight:"600"}}>
-        <div>
-    JavaScript (ES6+)
-    </div>
-    <div>
-    React
-    </div>
-    <div>
-    Node.js
-    </div>
-    <div>
-    Express.js
-    </div>
-    <div>
-    MongoDB
-    </div>
-    <div>
-    Figma
-    </div>
-
-                    </div>
-                </div>
-                <div className="rightside about">
-                    <div className="image about"> 
-                        <img alt="projectimg" className="profileimg" src={profilepic}></img>
                     </div>
                 </div>
             </div>

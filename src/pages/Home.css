@@ -2,10 +2,12 @@
     display: flex;
     position: relative;
     padding-top:50px;
-    padding-left:100px;
-    padding-right: 100px;
+    padding-left:0px;
+    padding-right:0px;
     flex-direction: row;
     justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .headerpopup{
@@ -42,18 +44,30 @@
     align-items: center;
 }
 
+.joblistitemUns{
+    transition: background-color 0.5s ease;
+}
+
+.joblistitemUns:hover{
+}
+
+.joblistitemSel{
+    font-weight: 600;
+}
+.joblistitemSel:hover{
+}
 .container{
     display:flex;
     flex-direction: column;
-    padding:100px;
-    grid-row-gap: 20px;
+    padding:20%;
+    padding-top: 150px;
+    grid-row-gap: 30px;
 }
 
 .links{
     display: flex;
     gap:70px;
     font-weight: 500;
-    padding-right: 120px;
 }
 .links > div{
     transition: color 0.3s;
@@ -79,9 +93,10 @@
     height: 100%;
     position: relative;
     display: flex;
-    justify-content: center;
+    margin-left: 100px;
     align-items: center;
     transition: opacity 0.3s;
+    overflow: hidden;
 }
 
 .image.about{
@@ -158,10 +173,10 @@
 }
 
 .profileimg{
-    width:70%;
-    height:60vh;
+    width:60%;
+    height:34vh;
     object-position: center 0;
-    border-radius:4px;
+    border-radius:10px;
     object-fit:cover;
     border:1px solid rgb(0,0,0,0.1);
 }
@@ -169,11 +184,11 @@
 
 .hero{
     width:100%; 
-    font-size:28px;
+    font-size:26px;
 }
 
 .bio{
-    width:50%;
+    max-width:1000px;
 }
 
 .infosection{
@@ -183,7 +198,6 @@
 .sectiontitle{
     padding-top:40px;
     font-size:20px;
-    padding-bottom:10px;
 }
 
 .burgericon{
@@ -323,6 +337,7 @@
     }
     .bio{
         width:100%;
+        font-size: 1.2rem;
     }
     .project{
         align-items: center;
